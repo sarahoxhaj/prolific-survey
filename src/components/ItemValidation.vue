@@ -387,7 +387,7 @@
 
 <script>
 import { db } from '@/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, setDoc, doc } from 'firebase/firestore';
 
 export default {
     name: 'CollectingTerms',
@@ -417,7 +417,13 @@ export default {
         }
     },
     methods: {
+        openImage(src) {
+            window.open(src, "_blank");
+        },
+
         async saveDataToFirebase() {
+            console.log("Save button clicked");
+
             for (const [, value] of Object.entries(this.ratings)) {
                 if (value === null) {
                     alert("Please answer all statements before continuing.");
@@ -430,10 +436,11 @@ export default {
                     id: this.userID,
                     gender: sessionStorage.getItem("gender"),
                     age: sessionStorage.getItem("age"),
-                    years: sessionStorage.getItem("years")
+                    years: sessionStorage.getItem("years"),
+                    prolificID: sessionStorage.getItem("prolificID")
                 };
 
-                await addDoc(collection(db, "userData"), userData);
+                await setDoc(doc(db, "userData", this.userID), userData);
                 console.log("User info saved:", userData);
 
                 const ratingsData = {

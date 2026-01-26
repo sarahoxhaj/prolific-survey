@@ -3,7 +3,18 @@
     <div class="bg-gray-50 dark:bg-slate-600 flex flex-col min-h-screen">
         <p class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white mt-7 text-center">Background</p>
         <div class="text-left px-24 mt-7">
+
             <p>
+                <span class="text-red-500 text-2xl">* </span>
+                <span class="dark:text-white"> <b>Please enter your Prolific ID:</b></span>
+            </p>
+
+            <input v-model="prolificID" type="text" id="prolificID"
+                class="mt-3 dark:text-black bg-gray-50 dark:bg-slate-200 border border-gray-300 dark:placeholder-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 h-9 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required />
+
+
+            <p class="mt-5">
                 <span class="text-red-500 text-2xl">* </span>
                 <span class="dark:text-white"> <b>Which gender do you identify with?</b></span>
             </p>
@@ -105,6 +116,7 @@ export default {
             otherGender: '',
             years: '',
             age: '',
+            prolificID: '',
         };
     },
     methods: {
@@ -122,10 +134,16 @@ export default {
                 }
                 gender = this.otherGender;
             }
+            if (!prolificID.trim()) {
+                alert("Please enter your Prolific ID.");
+                return;
+            }
+
 
             const yearsInput = this.years;
             const ageInput = this.age;
             const userID = Math.floor(10000 + Math.random() * 90000).toString();
+            const prolificID = this.prolificID;
 
 
             if (isNaN(yearsInput) || yearsInput === '') {
@@ -142,6 +160,7 @@ export default {
             sessionStorage.setItem("gender", gender);
             sessionStorage.setItem("years", yearsInput);
             sessionStorage.setItem("age", ageInput);
+            sessionStorage.setItem("prolificID", prolificID);
 
             console.log("Data successfully saved in session")
 
