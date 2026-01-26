@@ -84,7 +84,7 @@
 </template>
 
 <script setup>
-import { useDeviceCheck } from 'src/composables/useDeviceCheck.js'
+import { useDeviceCheck } from '../composables/useDeviceCheck.js'
 import { useRouter } from 'vue-router'
 
 // device check
