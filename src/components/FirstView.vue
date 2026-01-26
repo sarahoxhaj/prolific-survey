@@ -26,9 +26,7 @@
 
     </div> -->
 
-    <head>
-        <title>Visual Complexity - Survey</title>
-    </head>
+
 
     <div v-if="isLaptop">
         <div class="bg-gray-50 dark:bg-slate-600 flex flex-col items-center justify-start min-h-screen">

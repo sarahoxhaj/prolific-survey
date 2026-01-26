@@ -1,9 +1,5 @@
 <template>
 
-    <head>
-        <title>Visual Complexity - Survey</title>
-    </head>
-
     <div class="bg-gray-50 dark:bg-slate-600 flex flex-col min-h-screen pb-8 dark:text-white">
         <p class="mb-2 mt-20 text-4xl tracking-tight text-gray-900 text-center dark:text-white">
             Thank you!
