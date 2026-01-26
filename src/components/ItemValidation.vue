@@ -1,5 +1,9 @@
 <template>
 
+    <head>
+        <title>Visual Complexity - Survey</title>
+    </head>
+
     <div class="bg-gray-50 dark:bg-slate-600 flex flex-col min-h-screen pb-8">
         <p class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white mt-7 text-center">Rating the relevance of
             statements to assess perceived visual complexity.</p>
