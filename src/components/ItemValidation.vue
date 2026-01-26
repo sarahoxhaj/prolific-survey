@@ -1,21 +1,21 @@
 <template>
 
-    <head>
-        <title>Visual Complexity - Survey</title>
-    </head>
-
     <div class="bg-gray-50 dark:bg-slate-600 flex flex-col min-h-screen pb-8">
         <p class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white mt-7 text-center">Rating the relevance of
             statements to assess perceived visual complexity.</p>
 
         <div class="text-left px-24 mt-7 dark:text-white">
             <div>
-                <p> We would like you to rate different statements according to how relevant you consider them for
-                    judging a
-                    study participant's <b>perception of the visual complexity of a visualization.</b> Below are
-                    examples of
-                    visualizations which could be used as stimuli in such a study, but you can think
-                    of other data representations:</p>
+                <p> We would like you to rate how relevant each statement below is for measuring how visually complex a
+                    data
+                    visualization looks to you. Consider the example visualizations shown above, but you can think about
+                    all types of charts and graphs.
+                </p>
+                <p class="mt-4">
+                    For each statement, ask yourself:
+                    <span class="font-medium">“How relevant is this for describing the visual complexity of a static
+                        data visualization?”</span>
+                </p>
 
                 <div class="flex justify-end -mt-5">
                     <button @click.prevent="showOption1 = !showOption1" type="submit"
@@ -65,28 +65,10 @@
                 </div>
             </div>
 
-            <p class="mt-5">The table below includes statements generated from a combination of deductive and inductive
-                methods to study the <b>perceived visual complexity of a visualization.</b> Imagine that these terms
-                would
-                later be used
-                in a rating scale that you could give to participants as part of a visualization user study.</p> <br>
-            <p>Please note that the goal is not to assess the overall
-                system’s complexity, but <b>only the static view of a single visualization</b>, not its interactive
-                features.
-                While the terms <span class="text-red-500 dark:text-amber-300">visual complexity</span> and <span
-                    class="text-red-500 dark:text-amber-300">visualization complexity</span> are closely related and
-                often overlap, we
-                clarify our scope here: </p>
-            <p class="text-center mt-4 mx-12"> We are interested in how participants perceive the visual complexity of a
-                single, static data visualization — <b>focusing only on its visual appearance</b>.</p><br>
-            <p>Please also keep in mind that the statements should remain applicable for a great variety of data
-                visualizations and easy to understand for non expert participants.</p>
-            <p>Finally, note that the purpose of this survey is not <b>not</b> to select the final statements of the
-                scale: we seek to assess the individual relevancy of each statement, so redundancy within the list is
-                intentional at this stage.</p><br><br>
-            <p>How relevant do you think the following terms are for describing the <b>perceived visual complexity of a
-                    visualization?</b></p>
-
+            <p class="mt-5">Now, please rate the statements below using the scale from <span class="font-medium">Not
+                    Relevant</span> to <span class="font-medium">Very Relevant</span>.</p>
+            <p class="mt-3"><span class="font-medium">Remember:</span> focus only on visual appearance, think broadly
+                about many types of visualizations, and rate each statement individually.</p>
 
             <div
                 class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default mt-10">
@@ -97,7 +79,7 @@
 
                             </th>
                             <th scope="col" class="px-6 py-3 font-medium">
-                                1: not at all relevant
+                                1: not relevant
                             </th>
                             <th scope="col" class="px-6 py-3 font-medium">
                                 2
@@ -438,9 +420,6 @@ export default {
             try {
                 const userData = {
                     id: this.userID,
-                    gender: sessionStorage.getItem("gender"),
-                    age: sessionStorage.getItem("age"),
-                    years: sessionStorage.getItem("years"),
                     prolificID: sessionStorage.getItem("prolificID")
                 };
 

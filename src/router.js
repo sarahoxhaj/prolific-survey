@@ -1,10 +1,11 @@
 // src/router.js
 import { createRouter, createWebHistory } from "vue-router";
 import FirstView from "./components/FirstView.vue";
-import ConsentForm  from "./components/ConsentForm.vue";
-import BackgroundView from "./components/BackgroundView"
-import ItemValidation from "./components/ItemValidation.vue"
-import LastView from "./components/LastView.vue"
+import ConsentForm from "./components/ConsentForm.vue";
+import BackgroundView from "./components/BackgroundView";
+import ItemValidation from "./components/ItemValidation.vue";
+import LastView from "./components/LastView.vue";
+import ProlificIDView from "./components/ProlificIDView.vue";
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: "/LastView",
     name: "LastView",
     component: LastView,
+  },
+  {
+    path: "/ProlificIDView",
+    name: "ProlificIDView",
+    component: ProlificIDView,
   },
 ];
 
