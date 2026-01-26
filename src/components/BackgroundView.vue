@@ -126,6 +126,7 @@ export default {
                 alert("Please answer the questions.");
                 return;
             }
+
             let gender = selectedChoice.value;
             if (selectedChoice.value === 'other') {
                 if (!this.otherGender.trim()) {
@@ -134,17 +135,16 @@ export default {
                 }
                 gender = this.otherGender;
             }
-            if (!prolificID.trim()) {
+
+            if (!this.prolificID.trim()) {
                 alert("Please enter your Prolific ID.");
                 return;
             }
-
 
             const yearsInput = this.years;
             const ageInput = this.age;
             const userID = Math.floor(10000 + Math.random() * 90000).toString();
             const prolificID = this.prolificID;
-
 
             if (isNaN(yearsInput) || yearsInput === '') {
                 alert("Please enter a valid number for the second question.");
@@ -162,10 +162,10 @@ export default {
             sessionStorage.setItem("age", ageInput);
             sessionStorage.setItem("prolificID", prolificID);
 
-            console.log("Data successfully saved in session")
-
+            console.log("Data successfully saved in session");
             this.$router.push('/ItemValidation');
         }
+
     }
 }
 </script>
