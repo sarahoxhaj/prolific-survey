@@ -6,6 +6,7 @@ import BackgroundView from "./components/BackgroundView";
 import ItemValidation from "./components/ItemValidation.vue";
 import LastView from "./components/LastView.vue";
 import ProlificIDView from "./components/ProlificIDView.vue";
+import AttentionView from "./components/AttentionView.vue";
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: "/ProlificIDView",
     name: "ProlificIDView",
     component: ProlificIDView,
+  },
+  {
+    path: "/AttentionView",
+    name: "AttentionView",
+    component: AttentionView,
   },
 ];
 

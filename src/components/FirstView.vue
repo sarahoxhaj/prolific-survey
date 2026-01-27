@@ -60,14 +60,14 @@
                 <div class="mt-2 dark:text-white ml-20">
                     <ol class="list-decimal">
                         <li>Review the reference visualizations (6 images).</li>
-                        <li>Rate the relevance of each statement using a scale (e.g., Not at All Relevant to Very
+                        <li>Rate the relevance of each statement using a scale (e.g., Not Relevant to Very
                             Relevant).</li>
-                        <li>All responses are anonymous and voluntary—you may stop at any time.</li>
+                        <li>All responses are anonymous and voluntary — you may stop at any time.</li>
                     </ol>
                 </div>
 
                 <p class="mt-3"><b>Confidentiality & Data Use:</b> Your responses will be anonymized, stored securely,
-                    and used only for academic research. Results may be published, with anonymized data made publicly
+                    and used only for academic research. Results will be published, with anonymized data made publicly
                     available.</p>
 
                 <p class="mt-3"><b>Research Team:</b><br> Laura Koesten, Sara Hoxhaj, Torsten Möller (University of

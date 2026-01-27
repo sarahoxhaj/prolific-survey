@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { db } from '@/firebase';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 export default {
     name: 'ProlificIDView',
     data() {
@@ -26,19 +28,27 @@ export default {
     },
     methods: {
         async gotoSurvey() {
-
             if (!this.prolificID.trim()) {
                 alert("Please enter your Prolific ID.");
                 return;
             }
-            const userID = Math.floor(10000 + Math.random() * 90000).toString();
-            const prolificID = this.prolificID;
+            const q = query(
+                collection(db, "userData"),
+                where("prolificID", "==", this.prolificID.trim())
+            );
+            const querySnapshot = await getDocs(q);
 
+            if (!querySnapshot.empty) {
+                alert("This Prolific ID has already been used. Please check your ID.");
+                return;
+            }
+            const userID = Math.floor(10000 + Math.random() * 90000).toString();
             sessionStorage.setItem("userID", userID);
-            sessionStorage.setItem("prolificID", prolificID);
+            sessionStorage.setItem("prolificID", this.prolificID.trim());
 
             console.log("Data successfully saved in session");
-            this.$router.push('/ItemValidation');
+
+            this.$router.replace({ name: 'ItemValidation' });
         }
 
     }

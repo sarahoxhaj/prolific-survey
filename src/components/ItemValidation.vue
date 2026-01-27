@@ -6,10 +6,9 @@
 
         <div class="text-left px-24 mt-7 dark:text-white">
             <div>
-                <p> We would like you to rate how relevant each statement below is for measuring how visually complex a
-                    data
-                    visualization looks to you. Consider the example visualizations shown above, but you can think about
-                    all types of charts and graphs.
+                <p> We would like you to rate how relevant each statement below is for evaluating how visually complex a
+                    data visualization appears to you. You can use the images below as a reference, but please consider
+                    all types of charts and graphs when answering.
                 </p>
                 <p class="mt-4">
                     For each statement, ask yourself:
@@ -79,7 +78,7 @@
 
                             </th>
                             <th scope="col" class="px-6 py-3 font-medium">
-                                1: not relevant
+                                1: Not Relevant
                             </th>
                             <th scope="col" class="px-6 py-3 font-medium">
                                 2
@@ -91,7 +90,7 @@
                                 4
                             </th>
                             <th scope="col" class="px-6 py-3 font-medium">
-                                5: very relevant
+                                5: Very Relevant
                             </th>
                         </tr>
                     </thead>
@@ -204,6 +203,43 @@
                             </td>
                         </tr>
 
+                        <!-- attention question 1 -->
+                        <tr class="bg-neutral-primary border-b border-default ">
+                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
+                                I can see six data visualizations above.
+                            </th>
+                            <td class="px-6 py-4 flex justify-center">
+                                <label class="flex items-center dark:text-white -ml-16">
+                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="1"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4">
+                                <label class="flex items-center dark:text-white -ml-1">
+                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="2"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4">
+                                <label class="flex items-center dark:text-white">
+                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="3"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4">
+                                <label class="flex items-center dark:text-white -ml-1">
+                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="4"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4 flex justify-center">
+                                <label class="flex items-center dark:text-white -ml-16">
+                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="5"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                        </tr>
+
                         <tr class="bg-neutral-primary border-b border-default ">
                             <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
                                 I find this visualization familiar.
@@ -276,6 +312,9 @@
                             </td>
                         </tr>
 
+
+
+
                         <tr class="bg-neutral-primary border-b border-default ">
                             <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
                                 I find this visualization easy to interpret.
@@ -308,6 +347,43 @@
                                 <label class="flex items-center dark:text-white -ml-16">
                                     <input v-model="ratings.q6" type="radio" name="q6" value="5" required
                                         style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <!-- attention question 2 -->
+                        <tr class="bg-neutral-primary border-b border-default ">
+                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
+                                I can demonstrate that I am paying attention.
+                            </th>
+                            <td class="px-6 py-4 flex justify-center">
+                                <label class="flex items-center dark:text-white -ml-16">
+                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="1"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4">
+                                <label class="flex items-center dark:text-white -ml-1">
+                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="2"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4">
+                                <label class="flex items-center dark:text-white">
+                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="3"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4">
+                                <label class="flex items-center dark:text-white -ml-1">
+                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="4"
+                                        required style="width: 24px; height: 24px;">
+                                </label>
+                            </td>
+                            <td class="px-6 py-4 flex justify-center">
+                                <label class="flex items-center dark:text-white -ml-16">
+                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="5"
+                                        required style="width: 24px; height: 24px;">
                                 </label>
                             </td>
                         </tr>
@@ -348,6 +424,7 @@
                             </td>
                         </tr>
 
+
                     </tbody>
                 </table>
 
@@ -359,10 +436,15 @@
                 required></textarea>
 
             <div class="flex justify-end mt-10">
-                <button @click.prevent="saveDataToFirebase" type="submit"
+                <!-- <button @click.prevent="saveDataToFirebase" type="submit"
                     class="bg-sky-900 hover:bg-sky-800 text-white px-4 py-2 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Save
+                </button> -->
+                <button @click.prevent="saveDataToFirebase" :disabled="isSubmitting" type="submit"
+                    class="bg-sky-900 hover:bg-sky-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-4 py-2 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Save
                 </button>
+
             </div>
 
         </div>
@@ -387,7 +469,10 @@ export default {
                 q4: null,
                 q5: null,
                 q6: null,
-                q7: null
+                q7: null,
+                attention1: null,
+                attention2: null,
+                isSubmitting: false // flag
             },
             additionalComment: "",
             showOption1: true
@@ -407,14 +492,75 @@ export default {
             window.open(src, "_blank");
         },
 
+        // async saveDataToFirebase() {
+        //     console.log("Save button clicked");
+
+        //     for (const [, value] of Object.entries(this.ratings)) {
+        //         if (value === null) {
+        //             alert("Please answer all statements before continuing.");
+        //             return;
+        //         }
+        //     }
+
+        //     // attention check fails if both attention1 and attention2 are NOT 4 or 5
+        //     const att1 = Number(this.ratings.attention1);
+        //     const att2 = Number(this.ratings.attention2);
+
+        //     if ((att1 !== 4 && att1 !== 5) || (att2 !== 4 && att2 !== 5)) {
+        //         console.log("Attention check failed. Redirecting to AttentionView.");
+        //         //this.$router.push('/AttentionView');
+        //         this.$router.replace({ name: 'AttentionView' });
+        //         return;
+        //     }
+
+        //     // attention pass ok, data saved to firebase
+        //     try {
+        //         const userData = {
+        //             id: this.userID,
+        //             prolificID: sessionStorage.getItem("prolificID")
+        //         };
+        //         await setDoc(doc(db, "userData", this.userID), userData);
+        //         console.log("User info saved:", userData);
+
+        //         const ratingsData = {
+        //             userID: this.userID,
+        //             ratings: this.ratings,
+        //             additionalComment: this.additionalComment
+        //         };
+        //         await addDoc(collection(db, "item-validation"), ratingsData);
+        //         console.log("Ratings successfully saved:", ratingsData);
+
+        //         //this.$router.push('/LastView');
+        //         this.$router.replace({ name: 'LastView' });
+
+        //     } catch (error) {
+        //         console.error("Error saving data:", error);
+        //         alert("There was an error saving your data. Please try again.");
+        //     }
+        // }
+
         async saveDataToFirebase() {
+            if (this.isSubmitting) return;
+            this.isSubmitting = true;
+
             console.log("Save button clicked");
 
             for (const [, value] of Object.entries(this.ratings)) {
                 if (value === null) {
                     alert("Please answer all statements before continuing.");
+                    this.isSubmitting = false;
                     return;
                 }
+            }
+
+            // attention check
+            const att1 = Number(this.ratings.attention1);
+            const att2 = Number(this.ratings.attention2);
+
+            if ((att1 !== 4 && att1 !== 5) || (att2 !== 4 && att2 !== 5)) {
+                console.log("Attention check failed. Redirecting to AttentionView.");
+                this.$router.replace({ name: 'AttentionView' });
+                return;
             }
 
             try {
@@ -422,7 +568,6 @@ export default {
                     id: this.userID,
                     prolificID: sessionStorage.getItem("prolificID")
                 };
-
                 await setDoc(doc(db, "userData", this.userID), userData);
                 console.log("User info saved:", userData);
 
@@ -431,15 +576,15 @@ export default {
                     ratings: this.ratings,
                     additionalComment: this.additionalComment
                 };
-
                 await addDoc(collection(db, "item-validation"), ratingsData);
                 console.log("Ratings successfully saved:", ratingsData);
 
-                this.$router.push('/LastView');
+                this.$router.replace({ name: 'LastView' });
 
             } catch (error) {
                 console.error("Error saving data:", error);
                 alert("There was an error saving your data. Please try again.");
+                this.isSubmitting = false;
             }
         }
     }
