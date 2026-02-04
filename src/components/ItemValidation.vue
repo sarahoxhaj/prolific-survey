@@ -6,15 +6,21 @@
 
         <div class="text-left px-24 mt-7 dark:text-white">
             <div>
-                <p> We would like you to rate how relevant each statement below is for evaluating how visually complex a
-                    data visualization appears to you. You can use the images below as a reference, but please consider
-                    all types of charts and graphs when answering.
-                </p>
-                <p class="mt-4">
+                <p> You will see a list of statements about data visualizations. Rate how relevant each one is for
+                    describing the <b>visual complexity</b> of a static chart or graph.
+                </p><br>
+                <ul class="list-disc ml-5">
+                    <li>Use the images below as examples, but <b>think about all types</b> of visualizations.</li>
+                    <li>For each statement, ask: <b>“How relevant is this for describing visual complexity?”</b></li>
+                    <li><b>Rate each statement individually</b> on the scale from Not Relevant to Very
+                            Relevant.</li>
+                    <li><b>Focus only on visual appearance</b>, not the data's meaning.</li>
+                </ul>
+                <!-- <p class="mt-4">
                     For each statement, ask yourself:
                     <span class="font-medium">“How relevant is this for describing the visual complexity of a static
                         data visualization?”</span>
-                </p>
+                </p> -->
 
                 <!-- <div class="flex justify-end -mt-5">
                     <button @click.prevent="showOption1 = !showOption1" type="submit"
@@ -64,10 +70,10 @@
                 </div>
             </div> -->
 
-            <p class="mt-5">Now, please rate the statements below using the scale from <span class="font-medium">Not
+            <!-- <p class="mt-5">Now, please rate the statements below using the scale from <span class="font-medium">Not
                     Relevant</span> to <span class="font-medium">Very Relevant</span>.</p>
             <p class="mt-3"><span class="font-medium">Remember:</span> focus only on visual appearance, think broadly
-                about many types of visualizations, and rate each statement individually.</p>
+                about many types of visualizations, and rate each statement individually.</p> -->
 
             <div
                 class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default mt-10">
