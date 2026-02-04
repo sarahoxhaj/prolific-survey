@@ -224,67 +224,15 @@ export default {
             window.open(src, "_blank");
         },
 
-        // async saveDataToFirebase() {
-        //     console.log("Save button clicked");
-
-        //     for (const [, value] of Object.entries(this.ratings)) {
-        //         if (value === null) {
-        //             alert("Please answer all statements before continuing.");
-        //             return;
-        //         }
-        //     }
-
-        //     // attention check fails if both attention1 and attention2 are NOT 4 or 5
-        //     const att1 = Number(this.ratings.attention1);
-        //     const att2 = Number(this.ratings.attention2);
-
-        //     if ((att1 !== 4 && att1 !== 5) || (att2 !== 4 && att2 !== 5)) {
-        //         console.log("Attention check failed. Redirecting to AttentionView.");
-        //         //this.$router.push('/AttentionView');
-        //         this.$router.replace({ name: 'AttentionView' });
-        //         return;
-        //     }
-
-        //     // attention pass ok, data saved to firebase
-        //     try {
-        //         const userData = {
-        //             id: this.userID,
-        //             prolificID: sessionStorage.getItem("prolificID")
-        //         };
-        //         await setDoc(doc(db, "userData", this.userID), userData);
-        //         console.log("User info saved:", userData);
-
-        //         const ratingsData = {
-        //             userID: this.userID,
-        //             ratings: this.ratings,
-        //             additionalComment: this.additionalComment
-        //         };
-        //         await addDoc(collection(db, "item-validation"), ratingsData);
-        //         console.log("Ratings successfully saved:", ratingsData);
-
-        //         //this.$router.push('/LastView');
-        //         this.$router.replace({ name: 'LastView' });
-
-        //     } catch (error) {
-        //         console.error("Error saving data:", error);
-        //         alert("There was an error saving your data. Please try again.");
-        //     }
-        // }
-
         async saveDataToFirebase() {
-            if (this.isSubmitting) return;
-            this.isSubmitting = true;
-
-            console.log("Save button clicked");
-
             // all questions answered
             const allAnswered = this.questions.every(q => this.ratings[q.id] !== undefined);
 
             if (!allAnswered) {
                 alert("Please answer all statements before continuing.");
-                return;
+                return; // exit early without disabling the button
             }
-            
+
             // attention check
             const att1 = Number(this.ratings.attention1);
             const att2 = Number(this.ratings.attention2);
@@ -294,6 +242,10 @@ export default {
                 this.$router.replace({ name: 'AttentionView' });
                 return;
             }
+
+            // now safe to disable the button
+            if (this.isSubmitting) return;
+            this.isSubmitting = true;
 
             try {
                 const userData = {
@@ -316,9 +268,10 @@ export default {
             } catch (error) {
                 console.error("Error saving data:", error);
                 alert("There was an error saving your data. Please try again.");
-                this.isSubmitting = false;
+                this.isSubmitting = false; // re-enable button on error
             }
         }
+
     }
 }
 </script>
