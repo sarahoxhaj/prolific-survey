@@ -16,42 +16,42 @@
                         data visualization?”</span>
                 </p>
 
-                <div class="flex justify-end -mt-5">
+                <!-- <div class="flex justify-end -mt-5">
                     <button @click.prevent="showOption1 = !showOption1" type="submit"
                         class="bg-sky-900 hover:bg-sky-800 text-white px-4 py-2 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto text-center">
                         change images
                     </button>
-                </div>
+                </div> -->
             </div>
 
             <!-- option 1 -->
-            <div v-if="showOption1">
+            <div>
                 <div class="flex justify-center space-x-4 px-16 mt-6">
-                    <img @click="openImage(require('@/assets/2.4.png'))" src="@/assets/2.4.png" alt="Image 1"
-                        class="w-[15rem] h-[11rem]">
-                    <img @click="openImage(require('@/assets/2.3.png'))" src="@/assets/2.3.png" alt="Image 2"
-                        class="w-[14rem] h-[11rem]">
-                    <img @click="openImage(require('@/assets/2.7.png'))" src="@/assets/2.7.png" alt="Image 3"
-                        class="w-[15rem] h-[11rem]">
+                    <img @click="openImage(require('@/assets/bar.png'))" src="@/assets/bar.png" alt="Image 1"
+                        class="w-[15rem] h-[10rem] mt-2">
+                    <img @click="openImage(require('@/assets/map.png'))" src="@/assets/map.png" alt="Image 2"
+                        class="w-[16rem] h-[11rem]">
+                    <img @click="openImage(require('@/assets/line.png'))" src="@/assets/line.png" alt="Image 3"
+                        class="w-[17rem] h-[9rem] mt-4">
                 </div> <br>
                 <div class="flex justify-center space-x-4 px-16 mb-10">
-                    <img @click="openImage(require('@/assets/2.11.png'))" src="@/assets/2.11.png" alt="Image 4"
+                    <img @click="openImage(require('@/assets/spider.png'))" src="@/assets/spider.png" alt="Image 4"
                         class="w-[15rem] h-[11rem]">
                     <img @click="openImage(require('@/assets/1.1.png'))" src="@/assets/1.1.png" alt="Image 5"
-                        class="w-[15rem] h-[12rem]">
-                    <img @click="openImage(require('@/assets/1.2.png'))" src="@/assets/1.2.png" alt="Image 6"
                         class="w-[16rem] h-[12rem]">
+                    <img @click="openImage(require('@/assets/scatterPlot.png'))" src="@/assets/scatterPlot.png"
+                        alt="Image 6" class="w-[18rem] h-[10rem] mt-3">
                 </div>
             </div>
 
             <!-- option 2 -->
-            <div v-else>
+            <!-- <div v-else>
                 <div class="flex justify-center space-x-4 px-16 mt-6">
                     <img @click="openImage(require('@/assets/2.1.png'))" src="@/assets/2.1.png" alt="Image 1"
                         class="w-[14rem] h-[11rem]">
-                    <img @click="openImage(require('@/assets/2.10.png'))" src="@/assets/2.10.png" alt="Image 3"
+                    <img @click="openImage(require('@/assets/map.png'))" src="@/assets/map.png" alt="Image 3"
                         class="w-[15rem] h-[11rem]">
-                    <img @click="openImage(require('@/assets/2.2.png'))" src="@/assets/2.2.png" alt="Image 2"
+                    <img @click="openImage(require('@/assets/map.png'))" src="@/assets/map.png" alt="Image 2"
                         class="w-[14rem] h-[11rem]">
                 </div> <br>
                 <div class="flex justify-center space-x-4 px-16 mb-10 ml-8">
@@ -62,7 +62,7 @@
                     <img @click="openImage(require('@/assets/1.2.png'))" src="@/assets/1.2.png" alt="Image 5"
                         class="w-[17rem] h-[12rem]">
                 </div>
-            </div>
+            </div> -->
 
             <p class="mt-5">Now, please rate the statements below using the scale from <span class="font-medium">Not
                     Relevant</span> to <span class="font-medium">Very Relevant</span>.</p>
@@ -74,360 +74,78 @@
                 <table class="w-full text-sm text-left rtl:text-right text-body">
                     <thead class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default">
                         <tr>
-                            <th scope="col" class="px-6 py-3 font-medium">
+                            <th class="px-2 py-1 font-medium text-center font-medium"></th>
 
+
+                            <th class="px-2 py-1 font-medium text-center">
+                                <div class="flex flex-col items-center">
+                                    <span class="h-5">Not Relevant</span>
+                                    <span class="text-[15px]">1</span>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                1: Not Relevant
+
+                            <th class="px-2 py-1 font-medium text-center">
+                                <div class="flex flex-col items-center">
+                                    <span class="h-5">&nbsp;</span>
+                                    <span class="text-[15px]">2</span>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                2
+
+                            <th class="px-2 py-1 font-medium text-center">
+                                <div class="flex flex-col items-center">
+                                    <span class="h-5">&nbsp;</span>
+                                    <span class="text-[15px]">3</span>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                3
+
+                            <th class="px-2 py-1 font-medium text-center">
+                                <div class="flex flex-col items-center">
+                                    <span class="h-5">&nbsp;</span>
+                                    <span class="text-[15px]">4</span>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                4
-                            </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                5: Very Relevant
+
+                            <th class="px-2 py-1 font-medium text-center">
+                                <div class="flex flex-col items-center">
+                                    <span class="h-5">Very Relevant</span>
+                                    <span class="text-[15px]">5</span>
+                                </div>
                             </th>
                         </tr>
+
                     </thead>
-                    <tbody class>
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find the amount of visual elements distracting.
+
+                    <tbody>
+                        <tr v-for="question in paginatedQuestions" :key="question.id"
+                            class="bg-neutral-primary border-b border-default">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right align-middle">
+                                {{ question.text }}
                             </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q1" type="radio" name="q1" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q1" type="radio" name="q1" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q1" type="radio" name="q1" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q1" type="radio" name="q1" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q1" type="radio" name="q1" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
+
+                            <td v-for="value in 5" :key="value" class="px-6 py-4 align-middle text-center">
+                                <input v-model="ratings[question.id]" type="radio" :name="question.id" :value="value"
+                                    required class="w-6 h-6 mx-auto block scale-110">
                             </td>
                         </tr>
-
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find the visualization occludes information.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q2" type="radio" name="q2" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q2" type="radio" name="q2" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q2" type="radio" name="q2" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q2" type="radio" name="q2" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q2" type="radio" name="q2" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find the visualization cluttered.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q3" type="radio" name="q3" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q3" type="radio" name="q3" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q3" type="radio" name="q3" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q3" type="radio" name="q3" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q3" type="radio" name="q3" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-                        <!-- attention question 1 -->
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I can see six data visualizations above.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="1"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="2"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="3"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="4"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.attention1" type="radio" name="attention1" value="5"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find this visualization familiar.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q4" type="radio" name="q4" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q4" type="radio" name="q4" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q4" type="radio" name="q4" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q4" type="radio" name="q4" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q4" type="radio" name="q4" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find this visualization easy to understand.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q5" type="radio" name="q5" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q5" type="radio" name="q5" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q5" type="radio" name="q5" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q5" type="radio" name="q5" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q5" type="radio" name="q5" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-
-
-
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find this visualization easy to interpret.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q6" type="radio" name="q6" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q6" type="radio" name="q6" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q6" type="radio" name="q6" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q6" type="radio" name="q6" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q6" type="radio" name="q6" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-                        <!-- attention question 2 -->
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I can demonstrate that I am paying attention.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="1"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="2"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="3"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="4"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.attention2" type="radio" name="attention2" value="5"
-                                        required style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-                        <tr class="bg-neutral-primary border-b border-default ">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap text-right">
-                                I find this visualization clear.
-                            </th>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q7" type="radio" name="q7" value="1" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q7" type="radio" name="q7" value="2" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white">
-                                    <input v-model="ratings.q7" type="radio" name="q7" value="3" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4">
-                                <label class="flex items-center dark:text-white -ml-1">
-                                    <input v-model="ratings.q7" type="radio" name="q7" value="4" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                            <td class="px-6 py-4 flex justify-center">
-                                <label class="flex items-center dark:text-white -ml-16">
-                                    <input v-model="ratings.q7" type="radio" name="q7" value="5" required
-                                        style="width: 24px; height: 24px;">
-                                </label>
-                            </td>
-                        </tr>
-
-
                     </tbody>
+
+
+
                 </table>
 
+                <div class="flex justify-center mt-2 space-x-2 mb-2">
+                    <button @click="currentPage--" :disabled="currentPage === 1"
+                        class="dark:border-white px-3 py-1 border rounded disabled:opacity-50 border-sky-800 font-semibold transition-colors duration-200 text-gray-700 hover:text-white hover:bg-sky-800 dark:text-white dark:hover:text-white dark:hover:bg-sky-800">Prev</button>
+
+                    <button v-for="page in totalPages" :key="page" @click="currentPage = page" :class="['dark:border-white px-3 py-1 border border-sky-800 rounded font-semibold transition-colors duration-200 text-gray-700 hover:text-white hover:bg-sky-800 dark:text-white dark:hover:text-white dark:hover:bg-sky-800', currentPage === page
+                        ? 'bg-sky-800 text-white'
+                        : 'text-gray-700 dark:text-white']">
+                        {{ page }} </button>
+
+                    <button @click="currentPage++" :disabled="currentPage === totalPages"
+                        class="px-3 py-1 border rounded disabled:opacity-50 border-sky-800 dark:border-white font-semibold transition-colors duration-200 text-gray-700 hover:text-white hover:bg-sky-800 dark:text-white dark:hover:text-white dark:hover:bg-sky-800">Next</button>
+                </div>
             </div>
 
             <p class="mt-12">If you have any comments or suggestions related to this survey, please write them here.</p>
@@ -462,23 +180,37 @@ export default {
     data() {
         return {
             userID: null,
-            ratings: {
-                q1: null,
-                q2: null,
-                q3: null,
-                q4: null,
-                q5: null,
-                q6: null,
-                q7: null,
-                attention1: null,
-                attention2: null,
-                isSubmitting: false // flag
-            },
+            ratings: {},
             additionalComment: "",
-            showOption1: true
+            showOption1: true,
+            currentPage: 1,
+            rowsPerPage: 10, // sentences per page
+            questions: [
+                { id: 'q1', text: 'I find the amount of visual elements distracting.' },
+                { id: 'q2', text: 'I find the visualization occludes information.' },
+                { id: 'q3', text: 'I find the visualization cluttered.' },
+                { id: 'q4', text: 'I find this visualization familiar.' },
+                { id: 'q5', text: 'I find this visualization easy to understand.' },
+                { id: 'q6', text: 'I find this visualization easy to interpret.' },
+                { id: 'q7', text: 'I find this visualization clear.' },
+                { id: 'q8', text: 'I feel confident about this visualization.' },
+                { id: 'q9', text: 'I find this visualization difficult to read.' },
+                { id: 'q10', text: 'I feel confused by the visualization.' },
+                { id: 'q11', text: 'I feel overwhelmed by the visualization.' },
+                { id: 'q12', text: 'I feel curious about this visualization.' },
+            ],
         };
     },
-
+    computed: {
+        totalPages() {
+            return Math.ceil(this.questions.length / this.rowsPerPage);
+        },
+        paginatedQuestions() {
+            const start = (this.currentPage - 1) * this.rowsPerPage;
+            const end = start + this.rowsPerPage;
+            return this.questions.slice(start, end);
+        }
+    },
     mounted() {
         this.userID = sessionStorage.getItem("userID");
 
@@ -545,14 +277,14 @@ export default {
 
             console.log("Save button clicked");
 
-            for (const [, value] of Object.entries(this.ratings)) {
-                if (value === null) {
-                    alert("Please answer all statements before continuing.");
-                    this.isSubmitting = false;
-                    return;
-                }
-            }
+            // all questions answered
+            const allAnswered = this.questions.every(q => this.ratings[q.id] !== undefined);
 
+            if (!allAnswered) {
+                alert("Please answer all statements before continuing.");
+                return;
+            }
+            
             // attention check
             const att1 = Number(this.ratings.attention1);
             const att2 = Number(this.ratings.attention2);
