@@ -13,7 +13,7 @@
                     <li>Use the images below as examples, but <b>think about all types</b> of visualizations.</li>
                     <li>For each statement, ask: <b>“How relevant is this for describing visual complexity?”</b></li>
                     <li><b>Rate each statement individually</b> on the scale from Not Relevant to Very
-                            Relevant.</li>
+                        Relevant.</li>
                     <li><b>Focus only on visual appearance</b>, not the data's meaning.</li>
                 </ul>
                 <!-- <p class="mt-4">
@@ -199,11 +199,12 @@ export default {
                 { id: 'q5', text: 'I find this visualization easy to understand.' },
                 { id: 'q6', text: 'I find this visualization easy to interpret.' },
                 { id: 'q7', text: 'I find this visualization clear.' },
-                { id: 'q8', text: 'I feel confident about this visualization.' },
-                { id: 'q9', text: 'I find this visualization difficult to read.' },
-                { id: 'q10', text: 'I feel confused by the visualization.' },
-                { id: 'q11', text: 'I feel overwhelmed by the visualization.' },
-                { id: 'q12', text: 'I feel curious about this visualization.' },
+                { id: 'q8', text: 'I can see six images above.' },
+                { id: 'q9', text: 'I feel confident about this visualization.' },
+                { id: 'q10', text: 'I find this visualization difficult to read.' },
+                { id: 'q11', text: 'I feel confused by the visualization.' },
+                { id: 'q12', text: 'I feel overwhelmed by the visualization.' },
+                { id: 'q13', text: 'I feel curious about this visualization.' },
             ],
         };
     },
@@ -240,14 +241,20 @@ export default {
             }
 
             // attention check
-            const att1 = Number(this.ratings.attention1);
-            const att2 = Number(this.ratings.attention2);
+            const att1 = Number(this.ratings.q8);
+            //const att2 = Number(this.ratings.attention2);
 
-            if ((att1 !== 4 && att1 !== 5) || (att2 !== 4 && att2 !== 5)) {
+            if (att1 !== 4 && att1 !== 5) {
                 console.log("Attention check failed. Redirecting to AttentionView.");
                 this.$router.replace({ name: 'AttentionView' });
                 return;
             }
+
+            // if ((att1 !== 4 && att1 !== 5) || (att2 !== 4 && att2 !== 5)) {
+            //     console.log("Attention check failed. Redirecting to AttentionView.");
+            //     this.$router.replace({ name: 'AttentionView' });
+            //     return;
+            // }
 
             // now safe to disable the button
             if (this.isSubmitting) return;
